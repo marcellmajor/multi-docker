@@ -9,7 +9,6 @@ services:
 
 
 before_install:
-  - npm i -g npm@11.10.1
   - docker build -t marcell0major/react-test -f ./client/Dockerfile.dev ./client
 
 script:
