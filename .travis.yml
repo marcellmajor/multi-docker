@@ -9,10 +9,10 @@ script:
   - docker run marcellmajor/react-test npm test -- --coverage
 
 after_success:
-  - docekr build -t marcellmajor/multi-client ./client
-  - docekr build -t marcellmajor/multi-nginx ./nginx
-  - docekr build -t marcellmajor/multi-server ./server
-  - docekr build -t marcellmajor/multi-worker ./worker
+  - docker build -t marcellmajor/multi-client ./client
+  - docker build -t marcellmajor/multi-nginx ./nginx
+  - docker build -t marcellmajor/multi-server ./server
+  - docker build -t marcellmajor/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push marcellmajor/multi-client
   - docker push marcellmajor/multi-nginx
