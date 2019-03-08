@@ -1,10 +1,12 @@
 sudo: required
-services:
-  - docker
 
 language: node_js
 node_js:
   - "11.10.1"
+
+services:
+  - docker
+
 
 before_install:
   - docker build -t marcell0major/react-test -f ./client/Dockerfile.dev ./client
