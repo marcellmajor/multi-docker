@@ -3,18 +3,18 @@ services:
   - docker
 
 before_install:
-  - docker build -t marcellmajor/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t marcell0major/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run marcellmajor/react-test npm test -- --coverage
+  - docker run marcell0major/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t marcellmajor/multi-client ./client
-  - docker build -t marcellmajor/multi-nginx ./nginx
-  - docker build -t marcellmajor/multi-server ./server
-  - docker build -t marcellmajor/multi-worker ./worker
+  - docker build -t marcell0major/multi-client ./client
+  - docker build -t marcell0major/multi-nginx ./nginx
+  - docker build -t marcell0major/multi-server ./server
+  - docker build -t marcell0major/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push marcellmajor/multi-client
-  - docker push marcellmajor/multi-nginx
-  - docker push marcellmajor/multi-server
-  - docker push marcellmajor/multi-worker
+  - docker push marcell0major/multi-client
+  - docker push marcell0major/multi-nginx
+  - docker push marcell0major/multi-server
+  - docker push marcell0major/multi-worker
