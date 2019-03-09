@@ -1,6 +1,6 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "containerDefinitions:": [
+    "containerDefinitions": [
         {
             "name": "client",
             "image": "marcell0major/multi-client",
@@ -30,7 +30,7 @@
             "portMappings": [
                 {
                     "hostPort": 80,
-                    "contaierPort": 80
+                    "containerPort": 80
                 }
             ],
             "links": [
